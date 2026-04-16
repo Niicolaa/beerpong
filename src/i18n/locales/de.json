@@ -1,0 +1,196 @@
+{
+  "app": {
+    "title": "Beer Pong Turnier",
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "offline": "Kein Internet – Daten werden lokal gespeichert",
+    "back": "Zurück",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "confirm": "Bestätigen",
+    "close": "Schließen",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "export": "Exportieren",
+    "print": "Drucken",
+    "generate": "Generieren",
+    "start": "Starten",
+    "finish": "Beenden",
+    "reset": "Zurücksetzen",
+    "darkMode": "Dunkles Design",
+    "lightMode": "Helles Design"
+  },
+  "home": {
+    "title": "Beer Pong Turnier",
+    "subtitle": "Erstelle oder trete einem Turnier bei",
+    "createTournament": "Neues Turnier",
+    "joinCode": "Code eingeben",
+    "joinPlaceholder": "Z.B. AB1234",
+    "join": "Beitreten",
+    "recentTournaments": "Letzte Turniere",
+    "noCode": "Keinen Code? Frag den Turnierleiter!",
+    "invalidCode": "Ungültiger Code"
+  },
+  "create": {
+    "title": "Neues Turnier",
+    "name": "Turniername",
+    "namePlaceholder": "Z.B. WG-Turnier 2025",
+    "seedingMode": "Seeding",
+    "seeding": {
+      "snake": "Snake-Seeding (empfohlen)",
+      "random": "Zufällig",
+      "manual": "Manuell (per Drag & Drop)"
+    },
+    "groups": "Gruppenphase",
+    "groupCount": "Anzahl Gruppen",
+    "teamsPerGroup": "Teams pro Gruppe",
+    "advancePerGroup": "Aufsteiger pro Gruppe",
+    "thirdPlaceAdvance": "Beste Drittplatzierte aufsteigen lassen",
+    "schedule": "Zeitplan",
+    "startTime": "Startzeit",
+    "gameDuration": "Spieldauer (Minuten)",
+    "breakBetweenGames": "Pause zwischen Spielen (Minuten)",
+    "groupToKOBreak": "Pause Gruppen → KO (Minuten)",
+    "tableCount": "Anzahl Tische (parallel)",
+    "registrationOpen": "Team-Registrierung per Link erlauben",
+    "submit": "Turnier erstellen",
+    "addTeam": "Team hinzufügen",
+    "teamName": "Teamname",
+    "players": "Spieler (kommagetrennt)",
+    "removeTeam": "Team entfernen",
+    "minTeams": "Mindestens 2 Teams erforderlich",
+    "tiebreakerOrder": "Tiebreaker-Reihenfolge",
+    "tiebreakers": {
+      "wins": "Siege",
+      "pointDiff": "Cupbalance",
+      "headToHead": "Direktvergleich",
+      "cupsFor": "Geworfene Cups"
+    }
+  },
+  "tournament": {
+    "status": {
+      "setup": "Einrichtung",
+      "registration": "Anmeldung",
+      "group": "Gruppenphase",
+      "knockout": "KO-Phase",
+      "finished": "Beendet"
+    },
+    "shareCode": "Turnier-Code",
+    "shareLink": "Zuschauer-Link",
+    "qrCode": "QR-Code",
+    "adminDashboard": "Admin",
+    "spectatorView": "Zuschaueransicht",
+    "displayMode": "Großbildschirm",
+    "tabs": {
+      "groups": "Gruppen",
+      "schedule": "Spielplan",
+      "knockout": "KO-Phase",
+      "stats": "Statistiken",
+      "settings": "Einstellungen"
+    }
+  },
+  "groups": {
+    "title": "Gruppen",
+    "generate": "Gruppen auslosen",
+    "regenerate": "Neu auslosen",
+    "group": "Gruppe {{id}}",
+    "standings": "Tabelle",
+    "position": "#",
+    "team": "Team",
+    "wins": "S",
+    "losses": "N",
+    "cups": "Cups",
+    "diff": "+/-",
+    "allFinished": "Alle Gruppenspiele beendet",
+    "generateKO": "KO-Phase generieren"
+  },
+  "match": {
+    "vs": "vs.",
+    "table": "Tisch {{n}}",
+    "round": "Runde {{n}}",
+    "status": {
+      "scheduled": "Geplant",
+      "active": "Läuft",
+      "finished": "Beendet",
+      "bye": "Freilos"
+    },
+    "score": "Ergebnis eingeben",
+    "submit": "Ergebnis speichern",
+    "reopen": "Ergebnis korrigieren",
+    "cups": "Cups",
+    "winner": "Gewinner",
+    "alreadyFinished": "Spiel bereits beendet"
+  },
+  "timer": {
+    "title": "Timer",
+    "duration": "Dauer (Minuten)",
+    "start": "Starten",
+    "pause": "Pausieren",
+    "resume": "Fortsetzen",
+    "reset": "Zurücksetzen",
+    "alarm": "Alarm",
+    "timeUp": "Zeit abgelaufen!"
+  },
+  "schedule": {
+    "title": "Spielplan",
+    "generate": "Spielplan erstellen",
+    "regenerate": "Neu erstellen",
+    "time": "Zeit",
+    "table": "Tisch",
+    "match": "Spiel",
+    "status": "Status",
+    "noSchedule": "Noch kein Spielplan. Erst Gruppen generieren."
+  },
+  "knockout": {
+    "title": "KO-Phase",
+    "final": "Finale",
+    "semifinal": "Halbfinale",
+    "quarterfinal": "Viertelfinale",
+    "round": "Runde {{n}}",
+    "tbd": "Noch offen",
+    "champion": "🏆 Turniersieger",
+    "repairBracket": "Bracket reparieren",
+    "exportBracket": "Bracket exportieren"
+  },
+  "stats": {
+    "title": "Statistiken",
+    "mvp": "MVP",
+    "topScorer": "Meiste Cups",
+    "bestDefense": "Wenigste Gegencups",
+    "winRate": "Siegquote",
+    "totalCups": "Cups gesamt",
+    "noStats": "Noch keine Statistiken verfügbar"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "addAdmin": "Admin hinzufügen",
+    "adminUid": "Firebase UID",
+    "dangerZone": "Gefahrenzone",
+    "resetTournament": "Turnier zurücksetzen",
+    "confirmReset": "Wirklich zurücksetzen? Alle Ergebnisse gehen verloren!",
+    "closeRegistration": "Anmeldung schließen"
+  },
+  "display": {
+    "nextMatches": "Nächste Spiele",
+    "standings": "Tabellen",
+    "bracket": "KO-Bracket",
+    "autoRotate": "Automatisch rotieren"
+  },
+  "registration": {
+    "title": "Team anmelden",
+    "teamName": "Teamname",
+    "players": "Spielernamen",
+    "submit": "Anmelden",
+    "success": "Team erfolgreich angemeldet!",
+    "closed": "Anmeldung geschlossen"
+  },
+  "errors": {
+    "notFound": "Turnier nicht gefunden",
+    "unauthorized": "Keine Berechtigung",
+    "networkError": "Netzwerkfehler – bitte erneut versuchen",
+    "matchAlreadyFinished": "Spiel wurde bereits gewertet",
+    "invalidCode": "Ungültiger Turnier-Code"
+  }
+}

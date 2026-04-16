@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin(tournamentId) {
+      return request.auth != null
+        && request.auth.token.firebase.sign_in_provider != 'anonymous'
+        && request.auth.uid in get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.adminUids;
+    }
+
+    match /tournaments/{tournamentId} {
+      allow read: if true;
+      allow create: if request.auth != null && request.auth.token.firebase.sign_in_provider != 'anonymous';
+      allow update, delete: if isAdmin(tournamentId);
+
+      match /teams/{teamId} {
+        allow read: if true;
+        // Allow creation when registration is open (anonymous users) or admin
+        allow create: if request.auth != null && (
+          get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.config.registrationOpen == true
+          || isAdmin(tournamentId)
+        );
+        allow update, delete: if isAdmin(tournamentId);
+      }
+
+      match /groups/{groupId} {
+        allow read: if true;
+        allow write: if isAdmin(tournamentId);
+      }
+
+      match /matches/{matchId} {
+        allow read: if true;
+        allow write: if isAdmin(tournamentId);
+      }
+
+      match /bracket/{bracketId} {
+        allow read: if true;
+        allow write: if isAdmin(tournamentId);
+      }
+    }
+  }
+}

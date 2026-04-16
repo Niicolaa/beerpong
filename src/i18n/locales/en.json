@@ -1,0 +1,196 @@
+{
+  "app": {
+    "title": "Beer Pong Tournament",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "offline": "No internet – data is saved locally",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "close": "Close",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "export": "Export",
+    "print": "Print",
+    "generate": "Generate",
+    "start": "Start",
+    "finish": "Finish",
+    "reset": "Reset",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
+  },
+  "home": {
+    "title": "Beer Pong Tournament",
+    "subtitle": "Create or join a tournament",
+    "createTournament": "New Tournament",
+    "joinCode": "Enter code",
+    "joinPlaceholder": "E.g. AB1234",
+    "join": "Join",
+    "recentTournaments": "Recent Tournaments",
+    "noCode": "No code? Ask the tournament admin!",
+    "invalidCode": "Invalid code"
+  },
+  "create": {
+    "title": "New Tournament",
+    "name": "Tournament name",
+    "namePlaceholder": "E.g. House Party 2025",
+    "seedingMode": "Seeding",
+    "seeding": {
+      "snake": "Snake seeding (recommended)",
+      "random": "Random",
+      "manual": "Manual (drag & drop)"
+    },
+    "groups": "Group phase",
+    "groupCount": "Number of groups",
+    "teamsPerGroup": "Teams per group",
+    "advancePerGroup": "Teams advancing per group",
+    "thirdPlaceAdvance": "Allow best 3rd-place teams to advance",
+    "schedule": "Schedule",
+    "startTime": "Start time",
+    "gameDuration": "Game duration (minutes)",
+    "breakBetweenGames": "Break between games (minutes)",
+    "groupToKOBreak": "Break group → KO (minutes)",
+    "tableCount": "Number of tables (parallel)",
+    "registrationOpen": "Allow team registration via link",
+    "submit": "Create tournament",
+    "addTeam": "Add team",
+    "teamName": "Team name",
+    "players": "Players (comma-separated)",
+    "removeTeam": "Remove team",
+    "minTeams": "At least 2 teams required",
+    "tiebreakerOrder": "Tiebreaker order",
+    "tiebreakers": {
+      "wins": "Wins",
+      "pointDiff": "Cup difference",
+      "headToHead": "Head-to-head",
+      "cupsFor": "Cups scored"
+    }
+  },
+  "tournament": {
+    "status": {
+      "setup": "Setup",
+      "registration": "Registration",
+      "group": "Group phase",
+      "knockout": "Knockout",
+      "finished": "Finished"
+    },
+    "shareCode": "Tournament code",
+    "shareLink": "Spectator link",
+    "qrCode": "QR code",
+    "adminDashboard": "Admin",
+    "spectatorView": "Spectator view",
+    "displayMode": "Big screen",
+    "tabs": {
+      "groups": "Groups",
+      "schedule": "Schedule",
+      "knockout": "Knockout",
+      "stats": "Stats",
+      "settings": "Settings"
+    }
+  },
+  "groups": {
+    "title": "Groups",
+    "generate": "Draw groups",
+    "regenerate": "Redraw",
+    "group": "Group {{id}}",
+    "standings": "Standings",
+    "position": "#",
+    "team": "Team",
+    "wins": "W",
+    "losses": "L",
+    "cups": "Cups",
+    "diff": "+/-",
+    "allFinished": "All group matches finished",
+    "generateKO": "Generate knockout phase"
+  },
+  "match": {
+    "vs": "vs.",
+    "table": "Table {{n}}",
+    "round": "Round {{n}}",
+    "status": {
+      "scheduled": "Scheduled",
+      "active": "Active",
+      "finished": "Finished",
+      "bye": "Bye"
+    },
+    "score": "Enter score",
+    "submit": "Save result",
+    "reopen": "Edit result",
+    "cups": "Cups",
+    "winner": "Winner",
+    "alreadyFinished": "Match already finished"
+  },
+  "timer": {
+    "title": "Timer",
+    "duration": "Duration (minutes)",
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "reset": "Reset",
+    "alarm": "Alarm",
+    "timeUp": "Time's up!"
+  },
+  "schedule": {
+    "title": "Schedule",
+    "generate": "Generate schedule",
+    "regenerate": "Regenerate",
+    "time": "Time",
+    "table": "Table",
+    "match": "Match",
+    "status": "Status",
+    "noSchedule": "No schedule yet. Generate groups first."
+  },
+  "knockout": {
+    "title": "Knockout",
+    "final": "Final",
+    "semifinal": "Semifinal",
+    "quarterfinal": "Quarterfinal",
+    "round": "Round {{n}}",
+    "tbd": "TBD",
+    "champion": "🏆 Champion",
+    "repairBracket": "Repair bracket",
+    "exportBracket": "Export bracket"
+  },
+  "stats": {
+    "title": "Statistics",
+    "mvp": "MVP",
+    "topScorer": "Top scorer",
+    "bestDefense": "Best defense",
+    "winRate": "Win rate",
+    "totalCups": "Total cups",
+    "noStats": "No statistics yet"
+  },
+  "settings": {
+    "title": "Settings",
+    "addAdmin": "Add admin",
+    "adminUid": "Firebase UID",
+    "dangerZone": "Danger zone",
+    "resetTournament": "Reset tournament",
+    "confirmReset": "Really reset? All results will be lost!",
+    "closeRegistration": "Close registration"
+  },
+  "display": {
+    "nextMatches": "Next matches",
+    "standings": "Standings",
+    "bracket": "KO Bracket",
+    "autoRotate": "Auto rotate"
+  },
+  "registration": {
+    "title": "Register team",
+    "teamName": "Team name",
+    "players": "Player names",
+    "submit": "Register",
+    "success": "Team registered successfully!",
+    "closed": "Registration closed"
+  },
+  "errors": {
+    "notFound": "Tournament not found",
+    "unauthorized": "Unauthorized",
+    "networkError": "Network error – please try again",
+    "matchAlreadyFinished": "Match already finished",
+    "invalidCode": "Invalid tournament code"
+  }
+}
