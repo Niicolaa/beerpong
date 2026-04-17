@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { onAuthStateChanged, signInAnonymously, signInWithPopup, GoogleAuthProvider, signOut, User } from 'firebase/auth'
+import { onAuthStateChanged, signInAnonymously, signInWithRedirect, getRedirectResult, GoogleAuthProvider, signOut, User } from 'firebase/auth'
 import { auth } from '../lib/firebase'
 
 export function useAuth() {
@@ -7,13 +7,17 @@ export function useAuth() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // Pick up Google redirect result on page load
+    getRedirectResult(auth).catch(() => {})
+
     const unsub = onAuthStateChanged(auth, async u => {
       if (!u) {
         try {
           await signInAnonymously(auth)
         } catch {
-          // Silently fail if Firebase not configured
+          // Anonymous auth not enabled — show UI anyway
         }
+        setLoading(false)
       } else {
         setUser(u)
         setLoading(false)
@@ -22,9 +26,9 @@ export function useAuth() {
     return unsub
   }, [])
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider()
-    await signInWithPopup(auth, provider)
+    return signInWithRedirect(auth, provider)
   }
 
   const logout = async () => {

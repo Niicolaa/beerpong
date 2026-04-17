@@ -41,7 +41,7 @@ export function HomeScreen() {
 
       <div className="w-full max-w-sm space-y-3">
         {/* Join by code */}
-        <div className="rounded-2xl bg-white p-4 shadow-lg dark:bg-gray-800">
+        <div className="overflow-hidden rounded-2xl bg-white p-4 shadow-lg dark:bg-gray-800">
           <label className="mb-1 block text-xs font-semibold text-gray-600 dark:text-gray-400">
             {t('home.joinCode')}
           </label>
