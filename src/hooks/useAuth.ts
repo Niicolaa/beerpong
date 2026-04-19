@@ -44,14 +44,3 @@ export function useAuth() {
 
   return { user, loading, signInWithGoogle, logout, isAdmin }
 }
-
-
-  const logout = async () => {
-    await signOut(auth)
-  }
-
-  const isAdmin = (tournamentAdminUids: string[]) =>
-    !!user && !user.isAnonymous && tournamentAdminUids.includes(user.uid)
-
-  return { user, loading, signInWithGoogle, logout, isAdmin }
-}
