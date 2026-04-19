@@ -45,19 +45,19 @@ export function HomeScreen() {
           <label className="mb-1 block text-xs font-semibold text-gray-600 dark:text-gray-400">
             {t('home.joinCode')}
           </label>
-          <div className="flex gap-2">
+          <div className="flex flex-col gap-2">
             <input
               value={code}
               onChange={e => setCode(e.target.value.toUpperCase())}
               onKeyDown={e => e.key === 'Enter' && join()}
               placeholder={t('home.joinPlaceholder')}
               maxLength={6}
-              className="flex-1 rounded-lg border border-gray-300 bg-white px-3 py-2 font-mono text-lg uppercase tracking-widest dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+              className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 font-mono text-lg uppercase tracking-widest dark:border-gray-600 dark:bg-gray-700 dark:text-white"
             />
             <button
               onClick={join}
               disabled={loading || !code.trim()}
-              className="rounded-lg bg-brand-500 px-4 py-2 font-semibold text-white hover:bg-brand-600 disabled:opacity-50"
+              className="w-full rounded-lg bg-brand-500 px-4 py-2 font-semibold text-white hover:bg-brand-600 disabled:opacity-50"
             >
               {loading ? '…' : t('home.join')}
             </button>
