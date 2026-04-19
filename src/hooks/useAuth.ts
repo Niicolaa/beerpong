@@ -7,29 +7,44 @@ export function useAuth() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Pick up Google redirect result on page load
-    getRedirectResult(auth).catch(() => {})
+    let mounted = true
+    let unsub = () => {}
 
-    const unsub = onAuthStateChanged(auth, async u => {
-      if (!u) {
-        try {
-          await signInAnonymously(auth)
-        } catch {
-          // Anonymous auth not enabled — show UI anyway
-        }
-        setLoading(false)
-      } else {
-        setUser(u)
-        setLoading(false)
+    const init = async () => {
+      // Process Google redirect FIRST before doing anything else
+      try {
+        await getRedirectResult(auth)
+      } catch {
+        // Not a redirect result or error — continue
       }
-    })
-    return unsub
+
+      // Now listen to auth state (redirect result is already applied)
+      unsub = onAuthStateChanged(auth, async u => {
+        if (!mounted) return
+        if (!u) {
+          try { await signInAnonymously(auth) } catch {}
+          if (mounted) setLoading(false)
+        } else {
+          if (mounted) { setUser(u); setLoading(false) }
+        }
+      })
+    }
+
+    init()
+    return () => { mounted = false; unsub() }
   }, [])
 
-  const signInWithGoogle = () => {
-    const provider = new GoogleAuthProvider()
-    return signInWithRedirect(auth, provider)
-  }
+  const signInWithGoogle = () =>
+    signInWithRedirect(auth, new GoogleAuthProvider())
+
+  const logout = () => signOut(auth)
+
+  const isAdmin = (adminUids: string[]) =>
+    !!user && !user.isAnonymous && adminUids.includes(user.uid)
+
+  return { user, loading, signInWithGoogle, logout, isAdmin }
+}
+
 
   const logout = async () => {
     await signOut(auth)
