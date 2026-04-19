@@ -7,32 +7,32 @@ export function useAuth() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    let mounted = true
     const unsub = onAuthStateChanged(auth, async u => {
+      if (!mounted) return
       if (!u) {
-        try {
-          await signInAnonymously(auth)
-        } catch {
-          // Silently fail if Firebase not configured
-        }
+        try { await signInAnonymously(auth) } catch {}
+        if (mounted) setLoading(false)
       } else {
-        setUser(u)
-        setLoading(false)
+        if (mounted) { setUser(u); setLoading(false) }
       }
     })
-    return unsub
+    return () => { mounted = false; unsub() }
   }, [])
 
   const signInWithGoogle = async () => {
-    const provider = new GoogleAuthProvider()
-    await signInWithPopup(auth, provider)
+    try {
+      await signInWithPopup(auth, new GoogleAuthProvider())
+    } catch (e: unknown) {
+      const err = e as { code?: string }
+      if (err.code !== 'auth/popup-closed-by-user') throw e
+    }
   }
 
-  const logout = async () => {
-    await signOut(auth)
-  }
+  const logout = () => signOut(auth)
 
-  const isAdmin = (tournamentAdminUids: string[]) =>
-    !!user && !user.isAnonymous && tournamentAdminUids.includes(user.uid)
+  const isAdmin = (adminUids: string[]) =>
+    !!user && !user.isAnonymous && adminUids.includes(user.uid)
 
   return { user, loading, signInWithGoogle, logout, isAdmin }
 }
